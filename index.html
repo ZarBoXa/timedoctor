@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Time Doctor</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://localhost:9000/images/time-doctor-fav.ico" rel="icon" type="image/x-icon" />
+
+    <link rel="stylesheet" type="text/css" href="http://localhost:9000/css/styles.min.css">
+
+    <script type="text/javascript" src="http://localhost:9000/js/dep.min.js"></script>
+    <script type="text/javascript" src="http://localhost:9000/js/app.js"></script>
+    <script type="text/javascript" src="http://localhost:9000/js/scripts.min.js"></script>
+
+  </head>
+  <body ng-app="TimeDoctorTestApp" ng-jq>
+
+    <nav class="navbar navbar-default upper-navbar">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>                        
+          </button>
+          <a class="navbar-brand" href="#"><img src="http://localhost:9000/images/logo-xs.png" width="35px"></a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#" >dashboard <span class="caret"></span></a></li>
+            <li><a href="#">edit time</a></li>
+            <li><a href="#" class="hidden-sm">screenshots</a></li>
+            <li><a href="#" >reports <span class="caret"></span></a></li>
+            <li><a href="#">payments <span class="caret"></span></a></li>
+          </ul>    
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#" class="h-52"><span class="icons icons-bullhorn"></span></a></li>
+            <li><a href="#" class="h-52"><span class="icons icons-help"></span><span class="dropup"><span class="caret color-light"></span></span></a></li>
+            <li><a href="#" class="h-52"><span class="icons icons-settings"></span><span class="caret color-light"></span></a></li>
+            <li><a href="#" style="padding:15px 10px 10px"><img src="http://localhost:9000/images/default-profile.jpg" style="border:1px solid #ccc;border-radius:4px;" width="25px"></a></li>
+            <li><a href="#" class="h-52"><span class="icons icons-logo"></span><span class="caret color-light"></span></a></li>
+          </ul>
+
+        </div>
+
+      </div>
+    </nav>
+
+    <div class="container-fluid" ng-controller="adminCtrl">
+      <div class="row p-b-10">
+
+        <div class="col-xs-6">
+          <h4 class="text-cap text-bold" style="">company dashboard</h4>
+        </div>
+
+        <div class="col-xs-6">
+          <button class="btn btn-widget pull-right" ><img src="http://localhost:9000/images/addwidget-icon.svg" width="30.5px"> Add Widget</button>
+          <button class="btn btn-default m-r-20 pull-right">Edit Layout</button>
+        </div>
+
+      </div>
+
+      <div class="row chunks-container">
+
+        <div class="col-xs-12 col-md-6 col-lg-4 m-b-15">
+          <div class="main chunk-1">
+
+            <chunk-title title="keyboard & mouse activity"></chunk-title>
+            
+            <div class="row progress-holder">
+              <div class="col-xs-12 m-b-10" ng-repeat="x in data.activities.slice(0,5) | orderBy : '-progress' track by $index">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <img ng-src="[[x.avatar]]" class="img-circle" alt="default-profile" width="22px" ng-cloak>
+                    <span class="p-l-5 text-cap" style="font-size:0.9em" ng-cloak>[[x.name]]</span>
+                  </div>
+                  <div class="col-xs-6 p-l-no">
+                    <uib-progressbar class="pull-left" max="100" type="success" value="[[x.progress]]" ng-cloak></uib-progressbar>
+                    <span class="pull-left color-medium text-bold" style="width:25%;" ng-cloak><span class="pull-right">[[x.progress]]%</span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <chunk-footer target="activities"></chunk-footer>
+
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-md-6 col-lg-4 m-b-15">
+          <div class="main chunk-2">
+
+            <chunk-title title="highest mobile users"></chunk-title>
+
+            <div class="row">
+              <div class="col-xs-7 col-lg-8" style="font-size:0.8em">
+                <div class="row p-l-10" ng-cloak>
+                  <div class="col-xs-6 p-t-15">
+                    <span class="mobile-users"></span>
+                    <span class="text-cap">benjamin tyler<br><b>24h 45m</b></span>
+                  </div>
+                  <div class="col-xs-6 p-t-15">
+                    <span class="mobile-users bk-red"></span>
+                    <span class="text-cap">benjamin tyler<br><b>24h 45m</b></span>
+                  </div>
+                  <div class="col-xs-6 p-t-15">
+                    <span class="mobile-users bk-cyan"></span>
+                    <span class="text-cap">benjamin tyler<br><b>24h 45m</b></span>
+                  </div>
+                  <div class="col-xs-6 p-t-15">
+                    <span class="mobile-users bk-purple"></span>
+                    <span class="text-cap">benjamin tyler<br><b>24h 45m</b></span>
+                  </div>
+                  <div class="col-xs-6 p-t-15">
+                    <span class="mobile-users bk-green"></span>
+                    <span class="text-cap">benjamin tyler<br><b>24h 45m</b></span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-5 col-lg-4">
+                <div id="PolarGuage" style="width: 100%; height: 180px;margin: 0 auto;padding-top:10px;"></div>
+              </div>
+            </div>
+            
+
+            <chunk-footer-hours></chunk-footer-hours>
+            
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-md-6 col-lg-4 m-b-15">
+          <div class="main chunk-3">
+
+            <chunk-title title="hours tracked"></chunk-title>
+            
+            <div id="trackedHours" style="width: 100%; margin: 0 auto"></div>
+
+            <hr>
+            <div class="footer" style="font-size:0.75em;bottom:5px;position:absolute;" ng-cloak>
+            <span class="m-r-20">
+              <span class="color-light">Min: </span>
+              <span><b>44h</b> </span>
+            </span>
+            <span>
+              <span class="color-light">Max: </span>
+              <span><b>96h</b> </span>
+            </span>
+
+            </div>
+
+          </div>
+        </div>
+        <div class="clearfix visible-lg"></div>
+
+
+        <div class="col-xs-12 col-md-6 col-lg-4 m-b-15">
+          <div class="main chunk-4">
+
+            <chunk-title title="top highest percentage of mobile time users"></chunk-title>
+
+            <div class="row progress-holder">
+              <div class="col-xs-12 m-b-10" ng-repeat="x in topApps.slice(0,5) | orderBy : '-progress' track by $index">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <span style="color:#798f9c" class="[[x.icon]]"></span>
+                    <span class="p-l-5 text-cap" style="font-size:0.9em" ng-cloak>[[x.name]]</span>
+                  </div>
+                  <div class="col-xs-6 p-l-no">
+                    <uib-progressbar class="pull-left" max="100" style="width:70%" type="semi-success" value="[[calculatProgress(x)]]" ng-cloak></uib-progressbar>
+                    <span class="pull-left color-medium text-bold" style="width:30%;font-size:0.8em;" ng-cloak><span class="pull-right">[[x.hours+'h '+x.mins+'m']]</span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <chunk-footer-hours></chunk-footer-hours>
+            
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6 col-lg-4 m-b-15">
+          <div class="main chunk-5">
+
+            <chunk-title title="top highest percentage of mobile time users"></chunk-title>
+
+            <div class="row progress-holder">
+              <div class="col-xs-12 m-b-10" ng-repeat="x in data.topHighestPercentage.slice(0,5) | orderBy : '-progress' track by $index">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <img ng-src="[[x.avatar]]" class="img-circle" alt="default-profile" width="22px" ng-cloak>
+                    <span class="p-l-5 text-cap" style="font-size:0.9em" ng-cloak>[[x.name]]</span>
+                  </div>
+                  <div class="col-xs-6 p-l-no">
+                    <uib-progressbar class="pull-left" max="100" style="width:70%" type="[[checkStatus(x)]]" value="[[calculatProgress(x)]]" ng-cloak></uib-progressbar>
+                    <span class="pull-left color-medium text-bold" style="width:30%;font-size:0.8em;" ng-cloak><span class="pull-right">[[x.hours+'h '+x.mins+'m']]</span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <chunk-footer target="topHighestPercentage"></chunk-footer>
+
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-md-6 col-lg-4 m-b-15">
+          <div class="main chunk-6">
+
+            <chunk-title title="users worked more than required"></chunk-title>
+
+            <div class="row text-center p-t-15">
+              <div class="col-xs-4" ng-repeat="x in trackedHours track by $index">
+                <span class="tracker-hours-guage" ng-cloak>
+                  <span class="text-cap">[[x.name]]</span><br>
+                  <span class="text-bold">[[x.hours]]h [[x.mins]]m</span>
+                </span>
+                <div id="container-speed-[[$index+1]]" style="height:42px;"></div>
+              </div>
+            </div>
+
+            <chunk-footer-hours></chunk-footer-hours>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+
+

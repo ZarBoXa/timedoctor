@@ -1,0 +1,45 @@
+{
+  "name": "timedoctortestapp",
+  "version": "1.0.0",
+  "description": "test for time doctor front end developer",
+  "main": "index.js",
+  "scripts": {
+    "test": "zarboxa:test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZarBoXa/timedoctor.git"
+  },
+  "keywords": [
+    "timedoctor"
+  ],
+  "author": "Hesham AbdAllah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZarBoXa/timedoctor/issues"
+  },
+  "homepage": "https://github.com/ZarBoXa/timedoctor#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^2.2.1",
+    "grunt-contrib-uglify": "^3.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-open": "^0.2.3",
+    "grunt-serve": "^0.1.6"
+  },
+  "dependencies": {
+    "angular": "^1.6.5",
+    "angular-animate": "^1.6.5",
+    "angular-aria": "^1.6.5",
+    "angular-messages": "^1.6.5",
+    "angular-route": "^1.6.5",
+    "angular-sanitize": "^1.6.5",
+    "angular-ui-bootstrap": "^2.5.0",
+    "bootstrap": "^3.3.7",
+    "components-font-awesome": "^4.6.3",
+    "highcharts": "^5.0.14",
+    "highcharts-ng": "^1.1.0",
+    "jquery": "^3.2.1"
+  }
+}
