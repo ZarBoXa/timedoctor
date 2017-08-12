@@ -1,4 +1,4 @@
-# timedoctor
+# Timedoctor front-end web devlopement test.
 
 Please run `npm install` to download neccessary dependencies.
 
