@@ -2,128 +2,128 @@
 
 App.controller('adminCtrl',['$scope',function($scope){
 
-	$scope.roles=['#f7d257','#63bf99','#5dd1e8','#e35f66'];
+    $scope.roles=['#f7d257','#63bf99','#5dd1e8','#e35f66'];
 
-	$scope.data={activities : [
-		{
-			name: 'scott love',
-			avatar: 'images/default-profile.jpg',
-			progress: 88,
-			position: 'product developer',
-			role: 0
-		},
-		{
-			name: 'samuel barret',
-			avatar: 'images/default-profile.jpg',
-			progress: 98,
-			position: 'product developer',
-			role: 0
-		},
-		{
-			name: 'michael mcDaniel',
-			avatar: 'images/default-profile.jpg',
-			progress: 81,
-			position: 'support',
-			role: 1
-		},
-		{
-			name: 'alejandro wilkerson',
-			avatar: 'images/default-profile.jpg',
-			progress: 78,
-			position: 'servers',
-			role: 2
-		},
-		{
-			name: 'ivan fowler',
-			avatar: 'images/default-profile.jpg',
-			progress: 71,
-			position: 'product manager',
-			role: 3
-		},
-	]};
-	$scope.mobileTypeUser=[
-		{
-			name: 'craig stokes',
-			avatar: 'images/default-profile.jpg',
-			hours: 10,
-			mins: 2,
-			position: 'product developer',
-			role: 0
-		},
-		{
-			name: 'dennis dunn',
-			avatar: 'images/default-profile.jpg',
-			hours: 12,
-			mins: 10,
-			position: 'product developer',
-			role: 0
-		},
-		{
-			name: 'gavin rose',
-			avatar: 'images/default-profile.jpg',
-			hours: 14,
-			mins: 8,
-			position: 'servers',
-			role: 2
-		},
-		{
-			name: 'bruce ramos',
-			avatar: 'images/default-profile.jpg',
-			hours: 16,
-			mins: 30,
-			position: 'product manager',
-			role: 3
-		},
-		{
-			name: 'raymond larson',
-			avatar: 'images/default-profile.jpg',
-			hours: 19,
-			mins: 30,
-			position: 'servers',
-			role: 2
-		},
-	];
+    $scope.data={activities : [
+        {
+            name: 'scott love',
+            avatar: 'images/default-profile.jpg',
+            progress: 88,
+            position: 'product developer',
+            role: 0
+        },
+        {
+            name: 'samuel barret',
+            avatar: 'images/default-profile.jpg',
+            progress: 98,
+            position: 'product developer',
+            role: 0
+        },
+        {
+            name: 'michael mcDaniel',
+            avatar: 'images/default-profile.jpg',
+            progress: 81,
+            position: 'support',
+            role: 1
+        },
+        {
+            name: 'alejandro wilkerson',
+            avatar: 'images/default-profile.jpg',
+            progress: 78,
+            position: 'servers',
+            role: 2
+        },
+        {
+            name: 'ivan fowler',
+            avatar: 'images/default-profile.jpg',
+            progress: 71,
+            position: 'product manager',
+            role: 3
+        },
+    ]};
+    $scope.mobileTypeUser=[
+        {
+            name: 'craig stokes',
+            avatar: 'images/default-profile.jpg',
+            hours: 10,
+            mins: 2,
+            position: 'product developer',
+            role: 0
+        },
+        {
+            name: 'dennis dunn',
+            avatar: 'images/default-profile.jpg',
+            hours: 12,
+            mins: 10,
+            position: 'product developer',
+            role: 0
+        },
+        {
+            name: 'gavin rose',
+            avatar: 'images/default-profile.jpg',
+            hours: 14,
+            mins: 8,
+            position: 'servers',
+            role: 2
+        },
+        {
+            name: 'bruce ramos',
+            avatar: 'images/default-profile.jpg',
+            hours: 16,
+            mins: 30,
+            position: 'product manager',
+            role: 3
+        },
+        {
+            name: 'raymond larson',
+            avatar: 'images/default-profile.jpg',
+            hours: 19,
+            mins: 30,
+            position: 'servers',
+            role: 2
+        },
+    ];
 
-	$scope.topApps=[
-		{
-			name: 'sketch',
-			hours: 99,
-			mins: 45,
-			icon: 'icons icons-sketch'
-		},
-		{
-			name: 'slack',
-			hours: 42,
-			mins: 5,
-			icon: 'icons icons-slack'
-		},
-		{
-			name: 'asana',
-			hours: 20,
-			mins: 51,
-			icon: 'icons icons-asana'
-		},
-		{
-			name: 'time doctor',
-			hours: 15,
-			mins: 34,
-			icon: 'icons icons-doctor'
-		},
-		{
-			name: 'telegram',
-			hours: 7,
-			mins: 10,
-			icon: 'icons icons-telegram'
-		},
+    $scope.topApps=[
+        {
+            name: 'sketch',
+            hours: 99,
+            mins: 45,
+            icon: 'icons icons-sketch'
+        },
+        {
+            name: 'slack',
+            hours: 42,
+            mins: 5,
+            icon: 'icons icons-slack'
+        },
+        {
+            name: 'asana',
+            hours: 20,
+            mins: 51,
+            icon: 'icons icons-asana'
+        },
+        {
+            name: 'time doctor',
+            hours: 15,
+            mins: 34,
+            icon: 'icons icons-doctor'
+        },
+        {
+            name: 'telegram',
+            hours: 7,
+            mins: 10,
+            icon: 'icons icons-telegram'
+        },
 
-	];
+    ];
 
 
-	$scope.calculatProgress=function(x){
-		var seconds=((x.hours*60)+x.mins)*60;
-		var percent=(seconds/(100*60*60))*100;
-		return percent > 100 ? 100 : percent;
-	}
+    $scope.calculatProgress=function(x){
+        var seconds=((x.hours*60)+x.mins)*60;
+        var percent=(seconds/(100*60*60))*100;
+        return percent > 100 ? 100 : percent;
+    }
 
     $scope.checkStatus=function(x){
         x=$scope.calculatProgress(x);
@@ -228,7 +228,7 @@ App.controller('adminCtrl',['$scope',function($scope){
 
 
 $(function () {
-	$('[data-toggle="popover"]').popover();
+    $('[data-toggle="popover"]').popover();
 
 $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=usdeur.json&callback=?', function (data) {
 
@@ -271,9 +271,8 @@ $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=usdeur.jso
             color:'#fff',
             fontSize: '14px'
         },
-        //pointFormat: '{series.name}<br><span style="font-size:2em; color: {point.color}; font-weight: bold">{point.y}%</span>',
         pointFormat: '<span>{point.y}%</span>',
-        positioner:      function(boxWidth, boxHeight, point) {         
+        positioner:function(boxWidth, boxHeight, point) {         
          return {x:point.plotX + 20, y:point.plotY - 20
       };      
         }
@@ -314,8 +313,6 @@ $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=usdeur.jso
 });
 
 
-// Uncomment to style it like Apple Watch
-
 if (!Highcharts.theme) {
     Highcharts.setOptions({
         chart: {
@@ -326,12 +323,10 @@ if (!Highcharts.theme) {
         colors: ['#face0a','#eb505d','#4ad2ed','#616ec2','#51c295'],
         title: {
             style: {
-                //color: 'silver'
             }
         },
         tooltip: {
             style: {
-                //color: 'silver'
             }
         }
     });
@@ -343,7 +338,7 @@ Highcharts.chart('PolarGuage', {
     chart: {
         type: 'solidgauge',
         marginTop: 0,
-	    renderTo: "PolarGuage"
+        renderTo: "PolarGuage"
     },
 
     title: {
@@ -355,23 +350,6 @@ Highcharts.chart('PolarGuage', {
     credits: {
         enabled: false
     },
-
-    /*tooltip: {
-        borderWidth: 0,
-        backgroundColor: 'none',
-        shadow: false,
-        style: {
-            fontSize: '14px'
-        },
-        pointFormat: '{series.name}<br><span style="font-size:2em; color: {point.color}; font-weight: bold">{point.y}%</span>',
-        positioner: function (labelWidth) {
-            return {
-                x: 200 - labelWidth / 2,
-                y: 180
-            };
-        }
-    },*/
-
     pane: {
         startAngle: 0,
         endAngle: 360,
@@ -515,7 +493,9 @@ var gaugeOptions = {
                 y: 5,
                 borderWidth: 0,
                 useHTML: true
-            }
+            },
+            linecap: 'round',
+            rounded: false
         }
     }
 };
@@ -534,12 +514,7 @@ var solidgauge = {
     series: [{
         data: [150],
         innerRadius:'100%',
-        radius: '80%',
-                /*dataLabels: {
-            format: '<div style="text-align:center"><span style="font-size:25px;color:' +
-                ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y}</span><br/>' +
-                   '<span style="font-size:12px;color:silver">km/h</span></div>'
-        }*/                
+        radius: '80%',             
         dataLabels: {
             format: '<div style="text-align:center"><img src="images/pointer.png" width="20px" style="position:relative;top:-5px;"></div>'
         }

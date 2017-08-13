@@ -3,6 +3,7 @@ module.exports=function(grunt){
 
 	grunt.initConfig({
 
+		pkg: grunt.file.readJSON('package.json'),
 		meta : {
 			banner : '/* AngularJs Dependencies <%= grunt.template.today() %> */'
 		},
@@ -62,7 +63,7 @@ module.exports=function(grunt){
 				port: 9000,
 				'aliases':{
 					'index': {
-						tasks: ['uglify'],
+						tasks: ['test'],
 						output: 'index.html'
 					}
 				}
@@ -75,7 +76,9 @@ module.exports=function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-serve');
 
-
 	grunt.registerTask('default',['cssmin','copy','uglify','serve']);
 
+	grunt.registerTask('test',function(){
+		grunt.log.write('Index.html served successfully on '+grunt.template.today()+' ').ok();
+	});
 };
